@@ -4,7 +4,7 @@
 
 %define major 3
 %define libname %mklibname %name %major
-%define libnamedevel %mklibname %name-devel
+%define libnamedevel %mklibname -d %name
 
 Summary: A Reed-Solomon encoder/decoder library
 Name: %{name}
