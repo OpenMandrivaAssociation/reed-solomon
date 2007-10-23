@@ -1,10 +1,10 @@
 %define name reed-solomon
 %define version 3.1.1
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define major 3
 %define libname %mklibname %name %major
-%define libnamedevel %mklibname %name
+%define libnamedevel %mklibname %name-devel
 
 Summary: A Reed-Solomon encoder/decoder library
 Name: %{name}
@@ -38,6 +38,7 @@ routines for the CCSDS-standard (255,223) code are also included.
 Summary: A Reed-Solomon encoder/decoder library
 Group: System/Libraries
 Provides: %{name}-devel
+Obsoletes: %mklibname %name
 Requires: %libname = %{version}-%{release}
 
 %description -n %libnamedevel
