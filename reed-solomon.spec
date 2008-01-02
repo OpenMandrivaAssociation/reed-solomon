@@ -15,6 +15,7 @@ Patch0: reed-solomon-destdir.patch
 License: GPL
 Group: System/Libraries
 Url: http://www.ka9q.net/code/fec/
+BuildRoot: %{_tmppath}/%{name}-buildroot
 
 %description
 This library implements a general-purpose encoder/decoder for Reed-Solomon
