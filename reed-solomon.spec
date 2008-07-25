@@ -1,6 +1,6 @@
 %define name reed-solomon
 %define version 3.1.1
-%define release %mkrel 2
+%define release %mkrel 4
 
 %define major 3
 %define libname %mklibname %name %major
