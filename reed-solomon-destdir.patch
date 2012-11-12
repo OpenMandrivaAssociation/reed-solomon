@@ -1,0 +1,30 @@
+Index: makefile.in
+===================================================================
+--- makefile.in
++++ makefile.in	2007-10-22 01:58:49.000000000 +0200
+@@ -6,6 +6,9 @@
+ exec_prefix=@exec_prefix@
+ VPATH = @srcdir@
+ CC=@CC@
++libdir=@libdir@
++mandir=@mandir@
++includedir=@includedir@
+ 
+ CFLAGS=@CFLAGS@ @ARCH_OPTION@ -Wall
+ 
+@@ -24,11 +27,10 @@
+ 	gcc -g -o $@ $^
+ 
+ install: all
+-	install -D -m 644 -p librs.a librs.so.@SO_VERSION@ @libdir@
+-	(cd @libdir@;ln -f -s librs.so.@SO_VERSION@ librs.so)
+-	ldconfig
+-	install -m 644 -p rs.h @includedir@
+-	install -m 644 rs.3 @mandir@/man3
++	install -D -m 644 -p librs.a librs.so.@SO_VERSION@ $(DESTDIR)$(libdir)
++	(cd $(DESTDIR)$(libdir);ln -f -s librs.so.@SO_VERSION@ librs.so)
++	install -m 644 -p rs.h $(DESTDIR)$(includedir)
++	install -m 644 rs.3 $(DESTDIR)$(mandir)/man3
+ 
+ librs.a: $(LIB)
+ 	ar rv $@ $^
