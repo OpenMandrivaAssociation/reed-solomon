@@ -77,3 +77,27 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/*.h
 %{_mandir}/*/*
 
+
+
+%changelog
+* Fri Aug 01 2008 Thierry Vignaud <tvignaud@mandriva.com> 3.1.1-5mdv2009.0
++ Revision: 260206
+- rebuild
+
+* Fri Jul 25 2008 Thierry Vignaud <tvignaud@mandriva.com> 3.1.1-4mdv2009.0
++ Revision: 248333
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Tue Oct 23 2007 Olivier Thauvin <nanardon@mandriva.org> 3.1.1-2mdv2008.1
++ Revision: 101389
+- fix devel name
+
+* Mon Oct 22 2007 Olivier Thauvin <nanardon@mandriva.org> 3.1.1-1mdv2008.1
++ Revision: 101065
+- initial mdv package
+- create reed-solomon
+
