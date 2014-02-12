@@ -1,21 +1,18 @@
-%define name reed-solomon
-%define version 3.1.1
-%define release %mkrel 5
-
 %define major 3
 %define libname %mklibname %name %major
 %define libnamedevel %mklibname -d %name
 
+%define debug_package %{nil}
+
 Summary: A Reed-Solomon encoder/decoder library
-Name: %{name}
-Version: %{version}
-Release: %{release}
+Name:    reed-solomon
+Version: 3.1.1
+Release: 6
 Source0: http://www.ka9q.net/code/fec/%{name}-%{version}.tar.gz
-Patch0: reed-solomon-destdir.patch
+Patch0:  reed-solomon-destdir.patch
 License: GPL
-Group: System/Libraries
-Url: http://www.ka9q.net/code/fec/
-BuildRoot: %{_tmppath}/%{name}-buildroot
+Group:   System/Libraries
+Url:     http://www.ka9q.net/code/fec/
 
 %description
 This library implements a general-purpose encoder/decoder for Reed-Solomon
@@ -58,46 +55,14 @@ export CFLAGS="%{optflags} -fPIC"
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
-
 mkdir -p %{buildroot}{%{_libdir},%{_mandir}/man3,%{_includedir}}
 %makeinstall_std
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files -n %{libname}
-%defattr(-,root,root)
 %{_libdir}/*.so.%{major}*
 
 %files -n %{libnamedevel}
-%defattr(-,root,root)
 %{_libdir}/*.so
 %{_libdir}/*.a
 %{_includedir}/*.h
 %{_mandir}/*/*
-
-
-
-%changelog
-* Fri Aug 01 2008 Thierry Vignaud <tvignaud@mandriva.com> 3.1.1-5mdv2009.0
-+ Revision: 260206
-- rebuild
-
-* Fri Jul 25 2008 Thierry Vignaud <tvignaud@mandriva.com> 3.1.1-4mdv2009.0
-+ Revision: 248333
-- rebuild
-- kill re-definition of %%buildroot on Pixel's request
-
-  + Olivier Blin <oblin@mandriva.com>
-    - restore BuildRoot
-
-* Tue Oct 23 2007 Olivier Thauvin <nanardon@mandriva.org> 3.1.1-2mdv2008.1
-+ Revision: 101389
-- fix devel name
-
-* Mon Oct 22 2007 Olivier Thauvin <nanardon@mandriva.org> 3.1.1-1mdv2008.1
-+ Revision: 101065
-- initial mdv package
-- create reed-solomon
-
