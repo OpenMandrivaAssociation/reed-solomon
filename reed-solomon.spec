@@ -7,7 +7,7 @@
 Summary: A Reed-Solomon encoder/decoder library
 Name:    reed-solomon
 Version: 3.1.1
-Release: 6
+Release: 7
 Source0: http://www.ka9q.net/code/fec/%{name}-%{version}.tar.gz
 Patch0:  reed-solomon-destdir.patch
 License: GPL
