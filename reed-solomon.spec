@@ -12,7 +12,7 @@ Source0: http://www.ka9q.net/code/fec/%{name}-%{version}.tar.gz
 Patch0:  reed-solomon-destdir.patch
 License: GPL
 Group:   System/Libraries
-Url:     http://www.ka9q.net/code/fec/
+Url:     https://www.ka9q.net/code/fec/
 
 %description
 This library implements a general-purpose encoder/decoder for Reed-Solomon
