@@ -14,6 +14,11 @@ License: GPL
 Group:   System/Libraries
 Url:     https://www.ka9q.net/code/fec/
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 This library implements a general-purpose encoder/decoder for Reed-Solomon
 error correcting codes. The decoder supports erasures. The user can specify
